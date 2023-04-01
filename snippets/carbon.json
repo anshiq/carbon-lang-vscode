@@ -1,0 +1,16 @@
+{
+    ".source.carbon":{
+        "Basic Carbon Snippet": {
+            "prefix": "imr",
+            "description": "Basic Int main function in cpp",
+            "body": [
+                "#include<iostream>",
+                "using names std;",
+                "int main(){",
+                "   cout<<'a';",
+                "   return 0;",
+                "}"
+            ]
+        }
+    }
+}

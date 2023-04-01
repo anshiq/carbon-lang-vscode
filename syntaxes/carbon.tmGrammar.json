@@ -1,0 +1,103 @@
+{
+    "scopeName": "source.carbon",
+    "name": "carbon",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "dataTypes"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "\\b(if|then|else|while|for|in|as|break|return|var|let|match|case|constraint|addr)\\b",
+                    "name": "keyword.control.carbon"
+                },
+                {
+                    "match": "\\b(fn|impl|class|interface|choice)\\b",
+                    "name": "keyword.storage.carbon"
+                },
+                {
+                    "match": "\\b(__continuation|__run|__await)\\b",
+                    "name": "keyword.experimental.carbon"
+                },
+                {
+                    "match": "\\b(base|abstract|virtual|protected|destructor|namespace|private)\\b",
+                    "name": "keyword.WIP.carbon"
+                },
+                {
+                    "match": "\\b(import|package|library|api|alias|external|where|returned|library|and|addr)\\b",
+                    "name": "keyword.other.carbon"
+                }
+            ]
+        },
+		"comments": {
+			"patterns": [
+				{
+					"begin": "//",
+					"end": "\\n",
+					"name": "comment.block.empty.tpl"
+				}
+			]
+		},
+        "strings": {
+            "name": "string.quoted.double.carbon",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.carbon",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "match": "\\b(true|false)\\b",
+                    "name": "constant.bool.carbon"
+                },
+                {
+                    "match": "\\b(0[xX][0-9a-fA-F_]*)\\b",
+                    "name": "constant.numeric.hex.carbon"
+                },
+                {
+                    "match": "\\b(([0-9][0-9_]*(\\.[0-9][0-9_]*)?)([eE](\\+|-)?[0-9][0-9_]*)?|[0-9][0-9_]*)[LlFfDd]?\\b",
+                    "name": "constant.numeric.common.carbon"
+                },
+                {
+                    "match": "(\\.[0-9][0-9_]*)([eE](\\+|-)?[0-9][0-9_]*)?[LlFfDd]?\\b",
+                    "name": "constant.numeric.float.carbon"
+                },
+                {
+                    "match": "\\b(null)\\b",
+                    "name": "constant.other.carbon"
+                }
+            ]
+        },
+        "dataTypes": {
+            "patterns": [
+                {
+                    "match": "\\b(i8,i16,i32,i64,i128,i256,u8,u16,u32,u64,u128)\\b",
+                    "name": "dataTypes.int.carbon"
+                },
+                {
+                    "match": "\\b(String,StringView)\\b",
+                    "name": "dataTypes.string.carbon"
+                }
+            ]
+        }
+    }
+}
