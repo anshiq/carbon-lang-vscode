@@ -1,12 +1,18 @@
 {
     "scopeName": "source.carbon",
     "name": "carbon",
+    "fileTypes": [
+        "carbon"
+    ],
     "patterns": [
         {
             "include": "#keywords"
         },
         {
             "include": "#strings"
+        },
+        {
+            "include": "#declarations"
         },
         {
             "include": "#comments"
@@ -43,15 +49,15 @@
                 }
             ]
         },
-		"comments": {
-			"patterns": [
-				{
-					"begin": "//",
-					"end": "\\n",
-					"name": "comment.block.empty.tpl"
-				}
-			]
-		},
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "\\n",
+                    "name": "comment.block.empty.tpl"
+                }
+            ]
+        },
         "strings": {
             "name": "string.quoted.double.carbon",
             "begin": "\"",
@@ -98,6 +104,49 @@
                     "name": "dataTypes.string.carbon"
                 }
             ]
-        }
+        },
+        "declarations": {
+            "patterns": [
+              {
+                "name": "keyword.declaration.namespace.carbon",
+                "match": "\\bnamespace\\b"
+              },
+              {
+                "name": "variable.other.carbon",
+                "match": "\\bvar\\b\\s+\\w+",
+                "captures": {
+                  "0": {
+                    "name": "keyword.declaration.variable.carbon"
+                  }
+                }
+              },
+              {
+                "name": "variable.other.carbon",
+                "match": "\\breturned\\b",
+                "captures": {
+                  "0": {
+                    "name": "keyword.modifier.variable.carbon"
+                  }
+                }
+              },
+              {
+                "name": "variable.other.constant.carbon",
+                "match": "\\blet\\b\\s+\\w+",
+                "captures": {
+                  "0": {
+                    "name": "keyword.declaration.constant.carbon"
+                  }
+                }
+              },
+              {
+                "name": "keyword.declaration.function.carbon",
+                "match": "\\bfn\\b"
+              },
+              {
+                "name": "keyword.declaration.class.carbon",
+                "match": "\\bclass\\b\\s+\\w+"
+              }
+            ]
+          }
     }
 }

@@ -39,7 +39,7 @@
       {
         "language": "carbon",
         "scopeName": "source.carbon",
-        "path": "./syntaxes/carbon.json"
+        "path": "./syntaxes/carbon.tmGrammar.json"
       }
     ],
     "commands": [
